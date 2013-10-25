@@ -59,9 +59,9 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.iChat.Theater.plist
 # Disbale AppStoreHelpers
 #---------------------------------------------------------------------
 
-launchctl unload -w /System/Library/LaunchAgents/com.apple.storeagent.plist
+#launchctl unload -w /System/Library/LaunchAgents/com.apple.storeagent.plist
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.store_helper.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.maspushagent.plist
+#launchctl unload -w /System/Library/LaunchAgents/com.apple.maspushagent.plist
 
 #---------------------------------------------------------------------
 # Disbale QuickLookHelper
