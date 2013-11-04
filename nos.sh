@@ -37,17 +37,23 @@ sudo rm -rf /var/run/sleepimage
 # Disbale ReportCrash
 #---------------------------------------------------------------------
 sudo defaults write com.apple.CrashReporter DialogType none
+com.apple.ReportCrash.Self.plist
+com.apple.ReportCrash.plist
+com.apple.ReportPanic.plist
+com.apple.ReportGPURestart.plist
+com.apple.SocialPushAgent.plist
+
 sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
 
 #---------------------------------------------------------------------
 # Disbale Bluetooth
 #---------------------------------------------------------------------
-launchctl unload -w /System/Library/LaunchAgents/com.apple.bluetoothUIServer.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.bluetoothAudioAgent.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.blued.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.bnepd.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.IOBluetoothUSBDFU.plist
+#launchctl unload -w /System/Library/LaunchAgents/com.apple.bluetoothUIServer.plist
+#launchctl unload -w /System/Library/LaunchAgents/com.apple.bluetoothAudioAgent.plist
+#sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.blued.plist
+#sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.bnepd.plist
+#sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.IOBluetoothUSBDFU.plist
 
 #---------------------------------------------------------------------
 # Disbale faceTime
@@ -61,7 +67,10 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.iChat.Theater.plist
 
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.storeagent.plist
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.store_helper.plist
-#launchctl unload -w /System/Library/LaunchAgents/com.apple.maspushagent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.maspushagent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.softwareupdate_notify_agent.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.locationd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.softwareupdated.plist
 
 #---------------------------------------------------------------------
 # Disbale QuickLookHelper
@@ -113,10 +122,13 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.AirPlayUIAgent.plist
 # Disbale Speech & Voice
 #---------------------------------------------------------------------
 sudo rm -rf /System/Library/Speech/Voices/
+launchctl unload -w /System/Library/LaunchAgents/com.apple.VoiceOver.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.voiceinstallerd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.synthesisserver.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.recognitionserver.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.feedbackservicesserver.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.speechsynthesisd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.speechdatainstallerd.plist
 
 #---------------------------------------------------------------------
 # Disbale SWAP
@@ -152,6 +164,12 @@ sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.abd.
 # Disbale AirportBase Station
 #---------------------------------------------------------------------
 sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.AirPortBaseStationAgent.plist
+
+#---------------------------------------------------------------------
+# Disbale iCloud Notifications
+#---------------------------------------------------------------------
+launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.AOSNotificationAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.AOSNotificationLoginAgent.plist
 
 #---------------------------------------------------------------------
 # Disbale Location TimeMachine Snapshots
@@ -196,3 +214,21 @@ sudo rm -rf /Library/Printers/
 # Disbale Thumbnails in Safari Quick Access
 #---------------------------------------------------------------------
 sudo defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
+
+
+#Disable Sync
+launchctl unload -w /System/Library/LaunchAgents/com.apple.RemoteDesktop.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.SafariNotificationAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.bookstoreagent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.UserNotificationCenterAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.UserNotificationCenterAgent-LoginWindow.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ZoomWindow.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.java.updateSharing.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.java.InstallOnDemand.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.screensharing.agent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.screensharing.MessagesAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.security.cloudkeychainproxy.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.syncservices.SyncServer.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.syncservices.uihandler.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.findmymacmessenger.plist
