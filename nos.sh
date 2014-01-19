@@ -37,23 +37,12 @@ sudo rm -rf /var/run/sleepimage
 # Disbale ReportCrash
 #---------------------------------------------------------------------
 sudo defaults write com.apple.CrashReporter DialogType none
-com.apple.ReportCrash.Self.plist
-com.apple.ReportCrash.plist
-com.apple.ReportPanic.plist
-com.apple.ReportGPURestart.plist
-com.apple.SocialPushAgent.plist
-
-sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
-
-#---------------------------------------------------------------------
-# Disbale Bluetooth
-#---------------------------------------------------------------------
-#launchctl unload -w /System/Library/LaunchAgents/com.apple.bluetoothUIServer.plist
-#launchctl unload -w /System/Library/LaunchAgents/com.apple.bluetoothAudioAgent.plist
-#sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.blued.plist
-#sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.bnepd.plist
-#sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.IOBluetoothUSBDFU.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.Self.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportPanic.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportGPURestart.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.SocialPushAgent.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
 
 #---------------------------------------------------------------------
 # Disbale faceTime
@@ -67,10 +56,8 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.iChat.Theater.plist
 
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.storeagent.plist
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.store_helper.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.maspushagent.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.softwareupdate_notify_agent.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.locationd.plist
-sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.softwareupdated.plist
+#launchctl unload -w /System/Library/LaunchAgents/com.apple.maspushagent.plist
+#launchctl unload -w /System/Library/LaunchAgents/com.apple.softwareupdate_notify_agent.plist
 
 #---------------------------------------------------------------------
 # Disbale QuickLookHelper
@@ -105,6 +92,7 @@ launchctl unload -w /System/Library/LaunchAgents/twitterd.plist
 #---------------------------------------------------------------------
 # Disbale Location
 #---------------------------------------------------------------------
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.locationd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.locationmenu.plist
 
 #---------------------------------------------------------------------
@@ -157,17 +145,18 @@ sudo defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
 #---------------------------------------------------------------------
 # Disbale Address Book
 #---------------------------------------------------------------------
-sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.SourceSync.plist
-sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.abd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.SourceSync.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.abd.plist
 
 #---------------------------------------------------------------------
 # Disbale AirportBase Station
 #---------------------------------------------------------------------
-sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.AirPortBaseStationAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.AirPortBaseStationAgent.plist
 
 #---------------------------------------------------------------------
 # Disbale iCloud Notifications
 #---------------------------------------------------------------------
+launchctl unload -w /System/Library/LaunchAgents/com.apple.librariand.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.AOSNotificationAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.AOSNotificationLoginAgent.plist
 
@@ -232,3 +221,45 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.security.cloudkeychai
 launchctl unload -w /System/Library/LaunchAgents/com.apple.syncservices.SyncServer.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.syncservices.uihandler.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.findmymacmessenger.plist
+
+#Maps?
+launchctl unload -w /System/Library/LaunchAgents/com.apple.Maps.pushdaemon.plist
+
+
+#---------------------------------------------------------------------
+# Delete Automator
+#---------------------------------------------------------------------
+
+#sudo rm -rf /Applications/Automator.app/
+#sudo rm -rf /System/Library/Automator/
+#sudo rm -rf /System/Library/CoreServices/Automator\ Launcher.app
+#sudo rm -rf /System/Library/CoreServices/System\ Image\ Utility.app/Contents/Library/Automator/
+#sudo rm -rf /System/Library/Frameworks/Automator.framework/
+
+#---------------------------------------------------------------------
+# I dont use these Applications anyway.
+#---------------------------------------------------------------------
+
+sudo rm -rf /Applications/Automator.app/
+sudo rm -rf /Applications/iBooks.app/
+sudo rm -rf /Applications/Mail.app/
+sudo rm -rf /Applications/Reminders.app/
+sudo rm -rf /Applications/Stickies.app/
+sudo rm -rf /Applications/TextEdit.app/
+sudo rm -rf /Applications/Notes.app/
+sudo rm -rf /Applications/Photo\ Booth.app/
+sudo rm -rf /Applications/DVD\ Player.app/
+sudo rm -rf /Applications/Messages.app/
+sudo rm -rf /Applications/Mission\ Control.app/
+sudo rm -rf /Applications/Dashboard.app/
+sudo rm -rf /Applications/Dictionary.app/
+sudo rm -rf /Applications/Game\ Center.app/
+sudo rm -rf /Applications/Calculator.app/
+sudo rm -rf /Applications/Calendar.app/
+sudo rm -rf /Applications/Chess.app/
+sudo rm -rf /Applications/Contacts.app/
+sudo rm -rf /System/Library/Screen\ Savers
+sudo rm -rf /System/Library/Frameworks/Automator.framework/
+sudo rm -rf /System/Library/CoreServices/System\ Image\ Utility.app/Contents/Library/Automator
+sudo rm -rf /System/Library/CoreServices/Automator\ Runner.app
+sudo rm -rf /System/Library/CoreServices/Automator\ Launcher.app/
