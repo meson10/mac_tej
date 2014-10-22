@@ -65,7 +65,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.iChat.Theater.plist
 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.quicklook.32bit.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.quicklook.config.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.quicklook.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.quicklook.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.quicklook.ui.helper.plist
 
 #---------------------------------------------------------------------
@@ -145,8 +145,8 @@ sudo defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
 #---------------------------------------------------------------------
 # Disbale Address Book
 #---------------------------------------------------------------------
-launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.SourceSync.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.abd.plist
+#launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.SourceSync.plist
+#launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.abd.plist
 
 #---------------------------------------------------------------------
 # Disbale AirportBase Station
@@ -249,7 +249,6 @@ sudo rm -rf /Applications/TextEdit.app/
 sudo rm -rf /Applications/Notes.app/
 sudo rm -rf /Applications/Photo\ Booth.app/
 sudo rm -rf /Applications/DVD\ Player.app/
-sudo rm -rf /Applications/Messages.app/
 sudo rm -rf /Applications/Mission\ Control.app/
 sudo rm -rf /Applications/Dashboard.app/
 sudo rm -rf /Applications/Dictionary.app/
@@ -257,7 +256,6 @@ sudo rm -rf /Applications/Game\ Center.app/
 sudo rm -rf /Applications/Calculator.app/
 sudo rm -rf /Applications/Calendar.app/
 sudo rm -rf /Applications/Chess.app/
-sudo rm -rf /Applications/Contacts.app/
 sudo rm -rf /System/Library/Screen\ Savers
 sudo rm -rf /System/Library/Frameworks/Automator.framework/
 sudo rm -rf /System/Library/CoreServices/System\ Image\ Utility.app/Contents/Library/Automator

@@ -40,9 +40,9 @@ test -r /etc/rc.common || exit 1
  
 StartService () {
     ConsoleMessage "Starting RamFS disks..."
-    RAMDisk /private/tmp 1024
+    RAMDisk /private/tmp 2048
     RAMDisk /var/run 64
-    RAMDisk /var/db 1024
+    RAMDisk /var/db 512
     mkdir -m 1777 /var/db/mds
 }
 StopService () {
