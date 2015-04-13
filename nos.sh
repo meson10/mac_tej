@@ -32,6 +32,7 @@ sudo defaults write com.apple.dock mcx-expose-disabled -bool TRUE
 #---------------------------------------------------------------------
 sudo pmset -a hibernatemode 0
 sudo rm -rf /var/run/sleepimage
+sudo rm -rf /private/var/run/sleepimage
 
 #---------------------------------------------------------------------
 # Disbale ReportCrash
@@ -242,7 +243,6 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.Maps.pushdaemon.plist
 
 sudo rm -rf /Applications/Automator.app/
 sudo rm -rf /Applications/iBooks.app/
-sudo rm -rf /Applications/Mail.app/
 sudo rm -rf /Applications/Reminders.app/
 sudo rm -rf /Applications/Stickies.app/
 sudo rm -rf /Applications/TextEdit.app/
@@ -261,3 +261,8 @@ sudo rm -rf /System/Library/Frameworks/Automator.framework/
 sudo rm -rf /System/Library/CoreServices/System\ Image\ Utility.app/Contents/Library/Automator
 sudo rm -rf /System/Library/CoreServices/Automator\ Runner.app
 sudo rm -rf /System/Library/CoreServices/Automator\ Launcher.app/
+
+sudo rm -rf /Applications/Mail.app/
+sudo rm -rf /Applications/Messages.app/
+sudo rm -rf /Applications/FaceTime.app/
+sudo rm -rf /Applications/Maps.app/
